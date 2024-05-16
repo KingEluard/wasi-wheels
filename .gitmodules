@@ -49,5 +49,5 @@
 	branch = 2ce972e4b848827023f0ee74a3a7f36228760c81
 [submodule "scipy/src"]
 	path = scipy/src
-	url = https://github.com/scipy/scipy.git
+	url = https://github.com/scipy/scipy
 	branch = 7f2ac6927d460c03bdbaff99e7acd6a596296101
