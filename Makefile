@@ -17,7 +17,7 @@ OUTPUTS := \
 	$(BUILD_DIR)/wrapt-wasi.tar.gz \
 	$(BUILD_DIR)/yaml-wasi.tar.gz \
 	$(BUILD_DIR)/_yaml-wasi.tar.gz \
-	$(BUILD_DIR)/yarl-wasi.tar.gz
+	$(BUILD_DIR)/yarl-wasi.tar.gz \
 	$(BUILD_DIR)/scipy-wasi.tar.gz
 WASI_SDK_VERSION := 20.31gfe4d2f01387d
 WASI_SDK_RELEASE := shared-library-alpha-3
