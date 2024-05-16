@@ -18,6 +18,7 @@ OUTPUTS := \
 	$(BUILD_DIR)/yaml-wasi.tar.gz \
 	$(BUILD_DIR)/_yaml-wasi.tar.gz \
 	$(BUILD_DIR)/yarl-wasi.tar.gz
+	$(BUILD_DIR)/scipy-wasi.tar.gz
 WASI_SDK_VERSION := 20.31gfe4d2f01387d
 WASI_SDK_RELEASE := shared-library-alpha-3
 HOST_PLATFORM := $(shell uname -s | sed -e 's/Darwin/macos/' -e 's/Linux/linux/')
@@ -113,6 +114,12 @@ $(BUILD_DIR)/yarl-wasi.tar.gz: $(WASI_SDK) $(CPYTHON)
 	(cd yarl && CROSS_PREFIX=$(CPYTHON) WASI_SDK_PATH=$(WASI_SDK) bash build.sh)
 	cp -a yarl/src/build/*/yarl "$(@D)"
 	(cd "$(@D)" && tar czf yarl-wasi.tar.gz yarl)
+
+$(BUILD_DIR)/scipy-wasi.tar.gz: $(WASI_SDK) $(CPYTHON)
+	@mkdir -p "$(@D)"
+	(cd scipy && CROSS_PREFIX=$(CPYTHON) WASI_SDK_PATH=$(WASI_SDK) bash build.sh)
+	cp -a scipy/src/build/lib.*/scipy "$(@D)"
+	(cd "$(@D)" && tar czf scipy-wasi.tar.gz numpy)
 
 $(WASI_SDK):
 	@mkdir -p "$(@D)"
