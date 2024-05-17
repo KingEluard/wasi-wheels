@@ -26,10 +26,13 @@ export NPY_DISABLE_SVML=1
 export NPY_BLAS_ORDER=
 export NPY_LAPACK_ORDER=
 
-pip install cython setuptools
+python -m pip install -r src/requirements/all.txt
 
-# Build SciPy
-(cd src && python3 setup.py build --disable-optimization -j 4)
+# # Build SciPy
+(cd src && python dev.py build)
 
-# Copy built SciPy module
+# # Copy built SciPy module
 cp -a scipy/build/lib.*/scipy build/
+
+# python3 -m pip install -r src/requirements/all.txt
+# python3 src/dev.py build

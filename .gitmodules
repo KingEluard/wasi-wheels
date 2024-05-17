@@ -50,4 +50,3 @@
 [submodule "scipy/src"]
 	path = scipy/src
 	url = https://github.com/scipy/scipy.git
-	branch = 7f2ac6927d460c03bdbaff99e7acd6a596296101
